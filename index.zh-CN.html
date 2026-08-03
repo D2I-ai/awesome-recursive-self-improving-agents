@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="《递归自改进智能体之路》项目主页中文版：面向自改进智能体系统的持续维护型综述、结构化文献地图与交互入口">
+    <title>递归自改进智能体之路</title>
+    <link rel="stylesheet" href="assets/css/site.css?v=20260731-5">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="主导航">
+          <a class="brand" href="#top" aria-label="RSI Survey 中文主页">
+            <span class="brand-mark">RSI</span>
+            <span>递归自改进智能体</span>
+          </a>
+          <div class="nav-links">
+            <a href="#overview">概览</a>
+            <a href="#levels">分级</a>
+            <a href="#framework">框架</a>
+            <a href="#taxonomy">分类</a>
+            <a href="#browser">论文</a>
+            <a href="#citation" class="nav-cta">引用</a>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy reveal in-view">
+          <span class="eyebrow"><span class="pulse"></span> 自改进智能体的全面综述</span>
+          <h1>递归自改进 <span>智能体之路</span></h1>
+          <p class="subtitle">
+            关于自改进智能体系统的综述，研究智能体如何将经验、评估反馈与训练信号转化为对自身组件的持久更新
+          </p>
+          <p class="authors">
+            Shuaiqi Liu*, Zhengkai Lin*, Yuxiang Zhang*, Yuanyi Ren*, Yue Wu, Yongbin Li,
+            Zheng Wang, Zhihang Fu*, Jieping Ye<br>
+            <strong>Alibaba Group</strong>
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#overview">了解综述框架</a>
+            <a class="btn accent" href="#levels">自改进能力分级</a>
+            <a class="btn blue" href="#browser">浏览代表论文</a>
+            <a class="btn" href="index.html">English</a>
+            <a class="btn" href="#citation">BibTeX</a>
+            <a class="btn" href="https://www.preprints.org/manuscript/202608.0051">论文</a>
+            <a class="btn" href="https://github.com/D2I-ai/awesome-recursive-self-improving-agents">Github</a>
+          </div>
+        </div>
+
+        <div class="hero-stack">
+          <aside class="hero-card abstract-hero reveal in-view" aria-label="综述摘要">
+            <div class="framework-hero-section" id="abstract">
+              <h2>摘要</h2>
+              <p class="section-lede">基于大模型的智能体系统发展迅速，已经能够以更高自主性完成日益复杂的任务。然而，人工开发和优化智能体系统需要大量人力与时间成本，这推动研究转向能够自我改进的智能体系统。本文综述研究能够自主地将经验和评估反馈转化为对自身组件持久更新的自改进智能体系统。为了比较不同智能体系统的自改进能力，我们提出了一个五级能力分级标准，覆盖从人工改进到通用递归自改进的完整范围。此外，我们提出了一个统一研究框架，将基座模型、agent harness、agent 数据系统、agent trainer 以及支配其改进过程的机制共同建模为一个耦合系统。在该框架指导下，我们系统回顾了自改进相关文献，并给出一个覆盖单组件自改进与跨组件协同改进的分类体系。同时，本文识别了迈向递归自改进智能体过程中的开放研究问题。本综述为研究自改进智能体系统提供了基础，并为未来研究提供了路线图。</p>
+            </div>
+          </aside>
+
+          <aside class="hero-card framework-hero reveal in-view" aria-label="递归自改进智能体统一框架">
+            <div class="framework-hero-section" id="overview">
+              <p class="kicker">从静态智能体，到能够持续改写自身的系统</p>
+              <h2>基础定义</h2>
+              <p class="section-lede">
+                论文将智能体系统形式化为一个耦合演化状态：基座模型、agent harness、agent 数据系统、agent trainer 与改进机制，<code>x<sub>t</sub> = (M<sub>t</sub>, H<sub>t</sub>, D<sub>t</sub>, T<sub>t</sub>, Imp<sub>t</sub>)</code>。
+                当改进机制本身也属于可修改的系统状态时，系统便从普通自改进走向递归自改进。
+              </p>
+            </div>
+            <div class="framework-hero-section" id="framework">
+              <p class="kicker">五个组件，一个改进闭环</p>
+              <h2>统一研究框架</h2>
+              <p class="section-lede">
+                统一框架将智能体系统自改进建模为模型、harness、数据系统、trainer 与改进机制这一耦合状态的更新。
+                它强调自主修改范围、组件间的依赖关系，以及“诊断 → 提出 → 评估 → 整合”的改进过程
+              </p>
+              <figure class="image-frame hero-framework-image">
+                <img src="assets/images/research_framework.png" alt="递归自改进智能体统一框架图">
+              </figure>
+              <div class="process-list hero-process-list">
+                <div class="process-item"><b>M</b><div><strong>基座模型</strong><br>系统的参数化核心，提供语言理解、推理、规划、代码生成与工具使用等通用能力</div></div>
+                <div class="process-item"><b>H</b><div><strong>Agent harness</strong><br>控制模型的观测、动作与工作流编排的执行层</div></div>
+                <div class="process-item"><b>D</b><div><strong>Agent 数据系统</strong><br>覆盖训练与评估数据的生产、验证、调度与分配全流程的数据系统</div></div>
+                <div class="process-item"><b>T</b><div><strong>Agent trainer</strong><br>通过监督信号、优化策略与基础设施将智能体经验转化为持久化模型更新的训练组件</div></div>
+                <div class="process-item"><b>Imp</b><div><strong>改进机制</strong><br>依据证据与反馈，对系统进行诊断、提出修改、评估修改效果与实施修改的过程</div></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <main>
+        <section class="section reveal" id="levels">
+          <div class="section-head">
+            <div>
+              <p class="kicker">L1–L5 对相关工作的自改进能力进行分级</p>
+              <h2>自改进能力分级</h2>
+            </div>
+            <p class="section-lede">
+              关键不只是智能体能否提出改进建议，而是它能否自主提出、实施、验证改进，并进一步改写未来的改进机制
+            </p>
+          </div>
+
+          <div class="browser" style="margin-bottom: 18px;">
+            <table class="paper-table">
+              <thead>
+                <tr>
+                  <th>等级</th>
+                  <th>类别名称</th>
+                  <th>自主提出改进</th>
+                  <th>自主实施改进</th>
+                  <th>自主验证改进</th>
+                  <th>改进改进的机制</th>
+                  <th>领域泛化性</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="等级"><strong>L1</strong></td>
+                  <td data-label="类别名称">人工改进</td>
+                  <td data-label="自主提出改进"></td>
+                  <td data-label="自主实施改进"></td>
+                  <td data-label="自主验证改进"></td>
+                  <td data-label="改进改进的机制"></td>
+                  <td data-label="领域泛化性"></td>
+                </tr>
+                <tr>
+                  <td data-label="等级"><strong>L2</strong></td>
+                  <td data-label="类别名称">辅助改进</td>
+                  <td data-label="自主提出改进">✓</td>
+                  <td data-label="自主实施改进"></td>
+                  <td data-label="自主验证改进"></td>
+                  <td data-label="改进改进的机制"></td>
+                  <td data-label="领域泛化性"></td>
+                </tr>
+                <tr>
+                  <td data-label="等级"><strong>L3</strong></td>
+                  <td data-label="类别名称">固定机制的自改进</td>
+                  <td data-label="自主提出改进">✓</td>
+                  <td data-label="自主实施改进">✓</td>
+                  <td data-label="自主验证改进">✓</td>
+                  <td data-label="改进改进的机制"></td>
+                  <td data-label="领域泛化性"></td>
+                </tr>
+                <tr>
+                  <td data-label="等级"><strong>L4</strong></td>
+                  <td data-label="类别名称">受限域递归自改进</td>
+                  <td data-label="自主提出改进">✓</td>
+                  <td data-label="自主实施改进">✓</td>
+                  <td data-label="自主验证改进">✓</td>
+                  <td data-label="改进改进的机制">✓</td>
+                  <td data-label="领域泛化性"></td>
+                </tr>
+                <tr>
+                  <td data-label="等级"><strong>L5</strong></td>
+                  <td data-label="类别名称">通用递归自改进</td>
+                  <td data-label="自主提出改进">✓</td>
+                  <td data-label="自主实施改进">✓</td>
+                  <td data-label="自主验证改进">✓</td>
+                  <td data-label="改进改进的机制">✓</td>
+                  <td data-label="领域泛化性">✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-5">
+            <article class="card level-card" data-level="L1">
+              <span class="badge">L1</span>
+              <h3>人工改进</h3>
+              <p>这类智能体系统没有自主改进能力，系统以固定形式部署和运行，每次修改都需要由人开发与部署流程</p>
+            </article>
+            <article class="card level-card" data-level="L2">
+              <span class="badge">L2</span>
+              <h3>辅助改进</h3>
+              <p>这类系统可以提出候选修改，但人类仍负责验证并实施修改，改进机制本身仍由人类维护</p>
+            </article>
+            <article class="card level-card" data-level="L3">
+              <span class="badge">L3</span>
+              <h3>固定机制的自改进</h3>
+              <p>这类系统可以自主提出、应用并验证对运行组件的修改，例如基座模型、agent harness、数据系统或 trainer，但改进机制本身仍然固定或由外部维护</p>
+            </article>
+            <article class="card level-card boundary" data-level="L4">
+              <span class="badge">L4</span>
+              <h3>受限域递归自改进</h3>
+              <p>这类系统不仅可以提出、验证并应用候选修改，还可以重写自身的改进机制，使改进过程具备自指性，并支持在限定的领域内持续长期进步</p>
+            </article>
+            <article class="card level-card boundary" data-level="L5">
+              <span class="badge">L5</span>
+              <h3>通用递归自改进</h3>
+              <p>L5 保留了 L4 的自主性、自指性和长期进步能力，同时能够把改进能力迁移到广泛且不断变化的任务领域，而不是局限于固定 benchmark 或受限的运行场景</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="browser">
+          <div class="section-head">
+            <div>
+              <p class="kicker">从多维度筛选代表性论文</p>
+              <h2>代表论文</h2>
+            </div>
+            <div class="section-actions">
+              <a class="btn" href="README.zh-CN.md#持续维护的文献索引">完整文献地图</a>
+              <a class="btn" href="README.md#taxonomy">English README index</a>
+            </div>
+          </div>
+
+          <div class="browser">
+            <div class="browser-controls">
+              <input id="paper-search" type="search" placeholder="搜索论文、机制或领域" aria-label="搜索论文">
+              <select id="component-filter" aria-label="按组件筛选">
+                <option value="all">全部组件</option>
+                <option value="harness" selected>Agent Harness</option>
+                <option value="data">Agent 数据系统</option>
+                <option value="trainer">Agent Trainer</option>
+                <option value="co">协同改进</option>
+              </select>
+              <select id="level-filter" aria-label="按 L-level 筛选">
+                <option value="all">全部级别</option>
+                <option value="L3">L3</option>
+                <option value="L4">L4</option>
+              </select>
+            </div>
+
+            <table class="paper-table">
+              <thead>
+                <tr>
+                  <th>论文</th>
+                  <th>组件</th>
+                  <th>年份</th>
+                  <th>级别</th>
+                  <th>关注点</th>
+                </tr>
+              </thead>
+              <tbody id="paper-table-body" data-label-paper="论文" data-label-component="组件" data-label-year="年份" data-label-level="级别" data-label-focus="关注点">
+                <tr><td colspan="5">正在从 papers.yaml 加载论文…</td></tr>
+              </tbody>
+            </table>
+            <div class="empty-state" id="paper-empty">当前筛选条件下没有匹配论文</div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="taxonomy">
+          <div class="section-head">
+            <div>
+              <p class="kicker">一张图看清当前系统在改进什么</p>
+              <h2>分类体系</h2>
+            </div>
+          </div>
+
+          <figure class="image-frame">
+            <img src="assets/images/taxonomy.png" alt="RSI Survey 分类体系总览图">
+          </figure>
+
+          <div class="grid-4 taxonomy-cards" style="margin-top: 18px;">
+            <article class="card">
+              <span class="branch-tag">Harness</span>
+              <h3>Agent Harness 自改进</h3>
+              <p>持续修改非参数化执行层，包括记忆、技能、工具、提示、工作流、编排与 scaffold 代码，从而改变智能体可观察什么、可调用什么以及如何组织目标导向的工作流</p>
+            </article>
+            <article class="card">
+              <span class="branch-tag">Data</span>
+              <h3>Agent 数据系统自改进</h3>
+              <p>迭代改进数据生产与数据利用，包括环境生成、任务和轨迹合成、验证以及课程自适应，并依据验证结果和训练反馈生成更高质量的训练与评测数据</p>
+            </article>
+            <article class="card">
+              <span class="branch-tag">Trainer</span>
+              <h3>Agent Trainer 自改进</h3>
+              <p>利用训练和评测结果持续修改数据如何转化为模型更新，包括监督设计、优化策略、训练基础设施以及 trainer 改进机制</p>
+            </article>
+            <article class="card">
+              <span class="branch-tag">Co-evolution</span>
+              <h3>跨组件协同改进</h3>
+              <p>研究系统级反馈循环，其中 harness、data 与 trainer 组件通过依赖关系协同改进，以应对演化中不断转移的系统瓶颈</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="open-problems">
+          <div class="section-head">
+            <div>
+              <p class="kicker">迈向通用可靠 RSI Agent的开放问题</p>
+              <h2>开放研究问题</h2>
+            </div>
+          </div>
+
+          <div class="grid-5">
+            <article class="card roadmap-card"><b>1</b><h3>长周期真实生产环境评测</h3><p>评测集应检验反复自我修改是否在不断变化的工作负载、目标、预算、工具和环境中提升可靠性、鲁棒性、实用性、能力保持以及改进过程本身</p></article>
+            <article class="card roadmap-card"><b>2</b><h3>可观测、可扩展、可修改的训练和推理基础设施</h3><p>RSI 需要统一且智能体友好的表示来描述执行轨迹、训练记录、验证结果、版本历史和资源使用，使智能体能够观察、复现、比较并安全修改整个改进过程</p></article>
+            <article class="card roadmap-card"><b>3</b><h3>从受限递归自改进到通用递归自改进</h3><p>关键挑战是让改进机制能够跨领域迁移，同时避免把只适用于特定任务的策略错误迁移到新场景</p></article>
+            <article class="card roadmap-card"><b>4</b><h3>递归自我修改下的安全与可控</h3><p>系统需要能力组件可修改，同时通过更严格验证、持续监控、回滚版本、安全警报、事故日志和人类审查来保护合规组件</p></article>
+            <article class="card roadmap-card"><b>5</b><h3>人类专家与智能体协同改进</h3><p>危险场景需要智能体知道何时请求专家参与、选择合适交互方式、提供可解释证据，并把专家反馈转化为可复用改进资源</p></article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="citation">
+          <div class="section-head">
+            <div>
+              <p class="kicker">引用本综述，并参与维护</p>
+              <h2>引用</h2>
+            </div>
+          </div>
+
+          <div class="citation-panel">
+            <pre><code id="bibtex-block">@article{202608.0051,
+  doi = {10.20944/preprints202608.0051.v1},
+  url = {https://www.preprints.org/manuscript/202608.0051},
+  year = 2026,
+  month = {August},
+  publisher = {Preprints},
+  author = {Shuaiqi Liu and Zhengkai Lin and Yuxiang Zhang and Yuanyi Ren and Yue Wu and Yongbin Li and Zheng Wang and Zhihang Fu and Jieping Ye},
+  title = {The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions},
+  journal = {Preprints}
+}</code></pre>
+            <aside class="card copy-card">
+              <h3>贡献新的相关工作</h3>
+              <p>向这个仓库提交新的相关工作</p>
+              <button class="btn blue copy-btn" id="copy-bibtex" type="button">复制 BibTeX</button>
+              <a class="btn" href="README.zh-CN.md#贡献方式">贡献指南</a>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© 2026 RSI Survey · Alibaba Group</span>
+        <span><a href="README.md">English README</a> · <a href="README.zh-CN.md">中文 README</a></span>
+      </footer>
+    </div>
+
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>

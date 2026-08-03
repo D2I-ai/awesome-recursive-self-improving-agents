@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Project page for The Path to Recursive Self-Improving Agents: a living survey and structured literature map for self-improving agent systems.">
+    <title>The Path to Recursive Self-Improving Agents</title>
+    <link rel="stylesheet" href="assets/css/site.css?v=20260731-5">
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <nav class="nav" aria-label="Main navigation">
+          <a class="brand" href="#top" aria-label="RSI Survey home">
+            <span class="brand-mark">RSI</span>
+            <span>RSI Agents</span>
+          </a>
+          <div class="nav-links">
+            <a href="#overview">Overview</a>
+            <a href="#levels">Grading Levels</a>
+            <a href="#framework">Framework</a>
+            <a href="#taxonomy">Taxonomy</a>
+            <a href="#browser">Papers</a>
+            <a href="#citation" class="nav-cta">Cite</a>
+          </div>
+        </nav>
+      </header>
+
+      <section class="hero" id="top">
+        <div class="hero-copy reveal in-view">
+          <span class="eyebrow"><span class="pulse"></span> Comprehensive survey for self-improving agents</span>
+          <h1>The Path to <span>Recursive Self-Improving Agents</span></h1>
+          <p class="subtitle">
+            A survey for self-improving agent systems that convert experience,
+            evaluation feedback, and training signals into persistent updates to their own components.
+          </p>
+          <p class="authors">
+            Shuaiqi Liu*, Zhengkai Lin*, Yuxiang Zhang*, Yuanyi Ren*, Yue Wu, Yongbin Li,
+            Zheng Wang, Zhihang Fu*, Jieping Ye<br>
+            <strong>Alibaba Group</strong>
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#overview">Read the framework</a>
+            <a class="btn accent" href="#levels">Self-improvement capability grading</a>
+            <a class="btn blue" href="#browser">Explore papers</a>
+            <a class="btn" href="index.zh-CN.html">中文版</a>
+            <a class="btn" href="#citation">BibTeX</a>
+            <a class="btn" href="https://www.preprints.org/manuscript/202608.0051">Paper</a>
+            <a class="btn" href="https://github.com/D2I-ai/awesome-recursive-self-improving-agents">Github</a>
+          </div>
+        </div>
+
+        <div class="hero-stack">
+          <aside class="hero-card abstract-hero reveal in-view" aria-label="Survey abstract">
+            <div class="framework-hero-section" id="abstract">
+              <h2>Abstract</h2>
+              <p class="section-lede">Agent systems based on foundation models have advanced rapidly and can now accomplish increasingly complex tasks with greater autonomy. However, manually developing and refining agent systems requires substantial human effort and time, motivating a shift toward agent systems that can improve themselves. In this survey, we study self-improving agent systems that autonomously transform experience and evaluation feedback into persistent updates to their components. To compare the self-improvement capabilities of diverse agent systems, we introduce a five-level grading standard, ranging from manual improvement to general recursive self-improvement. Furthermore, we propose a unified research framework that jointly models the foundation model, agent harness, agent data system, agent trainer, and the mechanism governing their improvement as a coupled system. Guided by this framework, we systematically review the literature on self-improvement and provide a taxonomy covering self-improvement in individual components and co-improvement across components. In addition, this survey identifies open research problems on the path toward recursive self-improving agents. Overall, this survey provides a foundation for studying self-improving agent systems and a roadmap for future research.</p>
+            </div>
+          </aside>
+
+          <aside class="hero-card framework-hero reveal in-view" aria-label="Unified recursive self-improving agent framework">
+            <div class="framework-hero-section" id="overview">
+              <p class="kicker">From static agents to systems that revise themselves</p>
+              <h2>Formal Foundation</h2>
+              <p class="section-lede">
+                The survey formalizes an agent system as a coupled evolving state: foundation model, agent harness,
+                agent data system, agent trainer, and improvement mechanism, <code>x<sub>t</sub> = (M<sub>t</sub>, H<sub>t</sub>, D<sub>t</sub>, T<sub>t</sub>, Imp<sub>t</sub>)</code>.
+                RSI begins when the mechanism that improves the system can itself become part of the modifiable state.
+              </p>
+            </div>
+            <div class="framework-hero-section" id="framework">
+              <p class="kicker">Five components, one improvement loop</p>
+              <h2>Unified Framework</h2>
+              <p class="section-lede">
+                The framework models agent-system self-improvement as updates to a coupled state of model, harness, data system, trainer, and improvement mechanism.
+                It highlights the autonomous modification scope, component dependencies, and the improvement process: Diagnose → Propose → Evaluate → Integrate.
+              </p>
+              <figure class="image-frame hero-framework-image">
+                <img src="assets/images/research_framework.png" alt="Unified recursive self-improving agent framework">
+              </figure>
+              <div class="process-list hero-process-list">
+                <div class="process-item"><b>M</b><div><strong>Foundation model</strong><br>The parametric core that supplies language understanding, reasoning, planning, code generation, and tool use</div></div>
+                <div class="process-item"><b>H</b><div><strong>Agent harness</strong><br>The execution layer that organizes what the model observes, which actions it can take, and how workflows run</div></div>
+                <div class="process-item"><b>D</b><div><strong>Agent data system</strong><br>The data lifecycle that produces, validates, schedules, and allocates training and evaluation data</div></div>
+                <div class="process-item"><b>T</b><div><strong>Agent trainer</strong><br>The trainer that turns agent experience into persistent model updates through supervision, optimization, and infrastructure</div></div>
+                <div class="process-item"><b>Imp</b><div><strong>Improvement mechanism</strong><br>The procedure that uses evidence and feedback to diagnose, propose, evaluate, and integrate system changes</div></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <main>
+        <section class="section reveal" id="levels">
+          <div class="section-head">
+            <div>
+              <p class="kicker">L1–L5 grades the self-improvement capability of related work</p>
+              <h2>Self-Improvement Capability Grading</h2>
+            </div>
+            <p class="section-lede">
+              The key distinction is not whether the agent can suggest an improvement, but whether it can propose,
+              apply, validate, and eventually revise the improvement mechanism itself.
+            </p>
+          </div>
+
+          <div class="browser" style="margin-bottom: 18px;">
+            <table class="paper-table">
+              <thead>
+                <tr>
+                  <th>Level</th>
+                  <th>Category Name</th>
+                  <th>Autonomous Proposal</th>
+                  <th>Autonomous Implementation</th>
+                  <th>Autonomous Validation</th>
+                  <th>Improve the Improvement Mechanism</th>
+                  <th>Domain Generality</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Level"><strong>L1</strong></td>
+                  <td data-label="Category Name">Manual Improvement</td>
+                  <td data-label="Autonomous Proposal"></td>
+                  <td data-label="Autonomous Implementation"></td>
+                  <td data-label="Autonomous Validation"></td>
+                  <td data-label="Improve the Improvement Mechanism"></td>
+                  <td data-label="Domain Generality"></td>
+                </tr>
+                <tr>
+                  <td data-label="Level"><strong>L2</strong></td>
+                  <td data-label="Category Name">Assisted Improvement</td>
+                  <td data-label="Autonomous Proposal">✓</td>
+                  <td data-label="Autonomous Implementation"></td>
+                  <td data-label="Autonomous Validation"></td>
+                  <td data-label="Improve the Improvement Mechanism"></td>
+                  <td data-label="Domain Generality"></td>
+                </tr>
+                <tr>
+                  <td data-label="Level"><strong>L3</strong></td>
+                  <td data-label="Category Name">Programmatic Self-Improvement</td>
+                  <td data-label="Autonomous Proposal">✓</td>
+                  <td data-label="Autonomous Implementation">✓</td>
+                  <td data-label="Autonomous Validation">✓</td>
+                  <td data-label="Improve the Improvement Mechanism"></td>
+                  <td data-label="Domain Generality"></td>
+                </tr>
+                <tr>
+                  <td data-label="Level"><strong>L4</strong></td>
+                  <td data-label="Category Name">Bounded Recursive Self-Improvement</td>
+                  <td data-label="Autonomous Proposal">✓</td>
+                  <td data-label="Autonomous Implementation">✓</td>
+                  <td data-label="Autonomous Validation">✓</td>
+                  <td data-label="Improve the Improvement Mechanism">✓</td>
+                  <td data-label="Domain Generality"></td>
+                </tr>
+                <tr>
+                  <td data-label="Level"><strong>L5</strong></td>
+                  <td data-label="Category Name">General Recursive Self-Improvement</td>
+                  <td data-label="Autonomous Proposal">✓</td>
+                  <td data-label="Autonomous Implementation">✓</td>
+                  <td data-label="Autonomous Validation">✓</td>
+                  <td data-label="Improve the Improvement Mechanism">✓</td>
+                  <td data-label="Domain Generality">✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="grid-5">
+            <article class="card level-card" data-level="L1">
+              <span class="badge">L1</span>
+              <h3>Manual Improvement</h3>
+              <p>This type of agent system has no autonomous improvement capability; it is deployed and executed in a fixed form, and every change requires a manual development and deployment process.</p>
+            </article>
+            <article class="card level-card" data-level="L2">
+              <span class="badge">L2</span>
+              <h3>Assisted Improvement</h3>
+              <p>This type of system can propose candidate modifications or diagnostic evidence, but humans remain responsible for validating and applying substantive changes while the improvement mechanism remains human-maintained.</p>
+            </article>
+            <article class="card level-card" data-level="L3">
+              <span class="badge">L3</span>
+              <h3>Programmatic Self-Improvement</h3>
+              <p>This type of system can autonomously propose, apply, and validate modifications to operational components such as the foundation model, agent harness, data system, or trainer, while the improvement mechanism remains fixed or externally maintained.</p>
+            </article>
+            <article class="card level-card boundary" data-level="L4">
+              <span class="badge">L4</span>
+              <h3>Bounded RSI</h3>
+              <p>This type of system can propose, validate, and apply candidate modifications while also rewriting its own improvement mechanism, making the improvement process self-referential within a bounded domain.</p>
+            </article>
+            <article class="card level-card boundary" data-level="L5">
+              <span class="badge">L5</span>
+              <h3>General RSI</h3>
+              <p>L5 retains the autonomy, self-reference, and long-term progress of L4 while transferring improvement capability across broad and evolving task domains rather than remaining limited to a fixed benchmark or narrow operational setting.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="browser">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Filter representative papers across multiple dimensions</p>
+              <h2>Representative Papers</h2>
+            </div>
+            <div class="section-actions">
+              <a class="btn" href="README.md#taxonomy">Full taxonomy</a>
+              <a class="btn" href="README.zh-CN.md#相关工作分类体系">文献分类</a>
+            </div>
+          </div>
+
+          <div class="browser">
+            <div class="browser-controls">
+              <input id="paper-search" type="search" placeholder="Search paper, mechanism, or domain" aria-label="Search papers">
+              <select id="component-filter" aria-label="Filter by component">
+                <option value="all">All components</option>
+                <option value="harness" selected>Agent Harness</option>
+                <option value="data">Agent Data System</option>
+                <option value="trainer">Agent Trainer</option>
+                <option value="co">Co-Improvement</option>
+              </select>
+              <select id="level-filter" aria-label="Filter by L-level">
+                <option value="all">All levels</option>
+                <option value="L3">L3</option>
+                <option value="L4">L4</option>
+              </select>
+            </div>
+
+            <table class="paper-table">
+              <thead>
+                <tr>
+                  <th>Paper</th>
+                  <th>Component</th>
+                  <th>Year</th>
+                  <th>Level</th>
+                  <th>Focus</th>
+                </tr>
+              </thead>
+              <tbody id="paper-table-body" data-label-paper="Paper" data-label-component="Component" data-label-year="Year" data-label-level="Level" data-label-focus="Focus">
+                <tr><td colspan="5">Loading papers from papers.yaml…</td></tr>
+              </tbody>
+            </table>
+            <div class="empty-state" id="paper-empty">No papers match the current filters</div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="taxonomy">
+          <div class="section-head">
+            <div>
+              <p class="kicker">A map of what today’s systems are improving</p>
+              <h2>Taxonomy</h2>
+            </div>
+          </div>
+
+          <figure class="image-frame">
+            <img src="assets/images/taxonomy.png" alt="RSI survey taxonomy overview">
+          </figure>
+
+          <div class="grid-4 taxonomy-cards" style="margin-top: 18px;">
+            <article class="card">
+              <span class="branch-tag">Harness</span>
+              <h3>Agent Harness Self-Improvement</h3>
+              <p>Persistently revises the non-parametric execution layer—memory, skills, tools, prompts, workflows, orchestration, and scaffold code—that controls what agents observe, invoke, and organize into goal-directed workflows</p>
+            </article>
+            <article class="card">
+              <span class="branch-tag">Data</span>
+              <h3>Agent Data System Self-Improvement</h3>
+              <p>Iteratively improves data production and utilization, including environment generation, task and trajectory synthesis, verification, and curriculum adaptation, to generate higher-quality training and evaluation data from verification and training feedback</p>
+            </article>
+            <article class="card">
+              <span class="branch-tag">Trainer</span>
+              <h3>Agent Trainer Self-Improvement</h3>
+              <p>Uses training and evaluation evidence to persistently revise how data become model updates, including supervision design, optimization strategy, training infrastructure, and the trainer-improvement mechanism</p>
+            </article>
+            <article class="card">
+              <span class="branch-tag">Co-evolution</span>
+              <h3>Cross-Component Co-Improvement</h3>
+              <p>Examines system-level feedback loops where harness, data, and trainer components jointly improve through dependency relationships as bottlenecks shift across the evolving agent system</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="open-problems">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Open problems on the path to general and reliable RSI agent</p>
+              <h2>Open Problems</h2>
+            </div>
+          </div>
+
+          <div class="grid-5">
+            <article class="card roadmap-card"><b>1</b><h3>Long-horizon real-world evaluation</h3><p>Benchmarks should test whether repeated self-modification improves reliability, robustness, usefulness, capability retention, and the improvement process itself under evolving workloads, goals, budgets, tools, and environments</p></article>
+            <article class="card roadmap-card"><b>2</b><h3>Observable, scalable, and modifiable training and inference infrastructure</h3><p>RSI needs unified, agent-friendly representations of execution traces, training records, validation results, version histories, and resource usage so agents can observe, reproduce, compare, and safely revise the improvement process</p></article>
+            <article class="card roadmap-card"><b>3</b><h3>From bounded recursive self-improvement to general recursive self-improvement</h3><p>The key challenge is to make improvement mechanisms transferable across domains while avoiding the inappropriate transfer of task-specific strategies that fail in new settings</p></article>
+            <article class="card roadmap-card"><b>4</b><h3>Safety and controllability under recursive self-modification</h3><p>Systems must keep capability-oriented components modifiable while protecting governance components through stricter verification, continuous monitoring, rollback versions, safety alerts, incident logs, and human review</p></article>
+            <article class="card roadmap-card"><b>5</b><h3>Human-expert and agent co-improvement</h3><p>High-impact applications need agents that know when to involve experts, choose the right interaction form, provide interpretable evidence, and convert expert feedback into reusable improvement resources</p></article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="citation">
+          <div class="section-head">
+            <div>
+              <p class="kicker">Cite this survey and contribute to this repository</p>
+              <h2>Citation</h2>
+            </div>
+          </div>
+
+          <div class="citation-panel">
+            <pre><code id="bibtex-block">@article{202608.0051,
+  doi = {10.20944/preprints202608.0051.v1},
+  url = {https://www.preprints.org/manuscript/202608.0051},
+  year = 2026,
+  month = {August},
+  publisher = {Preprints},
+  author = {Shuaiqi Liu and Zhengkai Lin and Yuxiang Zhang and Yuanyi Ren and Yue Wu and Yongbin Li and Zheng Wang and Zhihang Fu and Jieping Ye},
+  title = {The Path to Recursive Self-Improving Agents: Foundation, Framework, and Future Directions},
+  journal = {Preprints}
+}</code></pre>
+            <aside class="card copy-card">
+              <h3>Contribute new related work</h3>
+              <p>Submit new related work to this repository</p>
+              <button class="btn blue copy-btn" id="copy-bibtex" type="button">Copy BibTeX</button>
+              <a class="btn" href="README.md#contributing">Contribution guide</a>
+            </aside>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>© 2026 RSI Survey · Alibaba Group</span>
+        <span><a href="README.md">English README</a> · <a href="README.zh-CN.md#相关工作分类体系">中文文档</a></span>
+      </footer>
+    </div>
+
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>
