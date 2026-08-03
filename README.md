@@ -5,7 +5,7 @@
 Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li, Zheng Wang, Zhihang Fu\*, Jieping Ye<br>
 **Alibaba Group**
 
-[![Paper](https://img.shields.io/badge/Paper-Coming%20Soon-blue)](https://www.preprints.org/manuscript/202608.0051)
+[![Paper](https://img.shields.io/badge/Paper-Preprint-blue)](https://www.preprints.org/manuscript/202608.0051)
 [![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](./index.html)
 [![Awesome](https://awesome.re/badge.svg)](#living-survey-index)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](#contributing)
