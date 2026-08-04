@@ -14,6 +14,8 @@ Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li
 
 [English](./README.md) | **中文版**
 
+[论文](https://www.preprints.org/manuscript/202608.0051)
+
 本仓库是 **自改进的Agent系统** 的持续维护型文献地图：关注智能体如何把经验与评估反馈转化为对自身组件的持久更新，并进一步走向 **递归自改进的Agent系统**。
 
 </div>
