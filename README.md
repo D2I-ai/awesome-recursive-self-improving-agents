@@ -12,6 +12,8 @@ Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li
 
 **English** | [中文版](./README.zh-CN.md)
 
+[Full Text](https://www.preprints.org/manuscript/202608.0051)
+
 A living survey and structured literature map for **self-improving agent systems**: systems that transform experience and evaluation feedback into persistent updates to their own components, moving toward **recursive self-improving agents**.
 
 </div>
