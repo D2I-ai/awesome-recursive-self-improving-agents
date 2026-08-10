@@ -7,7 +7,7 @@
 Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li, Zheng Wang, Zhihang Fu\*, Jieping Ye<br>
 **Alibaba Group**
 
-[![Paper](https://img.shields.io/badge/Paper-Preprint-blue)](https://www.preprints.org/manuscript/202608.0051)
+[![Paper](https://img.shields.io/badge/Paper-Preprint-blue)](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
 [![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://d2i-ai.github.io/awesome-recursive-self-improving-agents/index.zh-CN.html)
 [![Awesome](https://awesome.re/badge.svg)](#持续维护的文献索引)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](#贡献方式)
