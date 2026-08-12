@@ -172,6 +172,7 @@ This category of work primarily modifies trajectory orchestration, agent composi
 | Workflow-R1 | [link](https://doi.org/10.48550/arXiv.2602.01202) | 2026 | L3 |
 | Learning to Hand Off | [link](https://doi.org/10.48550/arXiv.2605.19140) | 2026 | L3 |
 | AutoTTS | [link](https://arxiv.org/abs/2605.08083) | 2026 | L3 |
+| CORAL | [link](https://arxiv.org/abs/2604.01658) | 2026 | L3 |
 
 #### Self-Referential Code Modification
 
