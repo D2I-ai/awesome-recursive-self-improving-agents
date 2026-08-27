@@ -6,13 +6,13 @@ Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li
 **Alibaba Group**
 
 [![Paper](https://img.shields.io/badge/Paper-Preprint-blue)](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
-[![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://d2i-ai.github.io/awesome-recursive-self-improving-agents/)
+[![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://self-improving-agent.com/)
 [![Awesome](https://awesome.re/badge.svg)](#living-survey-index)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](#contributing)
 
 **English** | [中文版](./README.zh-CN.md)
 
-[Full Text](https://www.preprints.org/manuscript/202608.0051)
+[Full Text](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
 
 A living survey and structured literature map for **self-improving agent systems**: systems that transform experience and evaluation feedback into persistent updates to their own components, moving toward **recursive self-improving agents**.
 
