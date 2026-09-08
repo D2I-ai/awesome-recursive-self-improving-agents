@@ -397,6 +397,7 @@ Improved skills, tools, workflows, or scaffolds make training signals more infor
 | ARISE | [link](https://doi.org/10.48550/arXiv.2603.16060) | 2026 | L3 |
 | SIA | [link](https://doi.org/10.48550/arXiv.2605.27276) | 2026 | L3 |
 | HarnessForge | [link](https://api.semanticscholar.org/CorpusID:288861123) | 2026 | L3 |
+| Training Agents to Evolve with Their Harness: TaoLive Digital Avatar Agent Technical Report (HAT) | [link](https://arxiv.org/abs/2608.15763) | 2026 | L2 |
 
 #### Harness–Data Co-Improvement
 
