@@ -6,7 +6,7 @@ Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li
 **Alibaba Group**
 
 [![Paper](https://img.shields.io/badge/Paper-Preprint-blue)](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
-[![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://d2i-ai.github.io/VibeTraining-Bench/index.html)
+[![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://self-improving-agent.com/)
 [![Awesome](https://awesome.re/badge.svg)](#living-survey-index)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](#contributing)
 
