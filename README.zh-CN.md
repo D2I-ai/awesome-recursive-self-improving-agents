@@ -10,6 +10,7 @@ Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li
 [![Paper](https://img.shields.io/badge/Paper-Preprint-blue)](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
 [![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://self-improving-agent.com/index.zh-CN.html)
 [![Awesome](https://awesome.re/badge.svg)](#持续维护的文献索引)
+[![Benchmark](https://img.shields.io/badge/Benchmark-VibeTraining--Bench-orange)](https://github.com/D2I-ai/VibeTraining-Bench)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](#贡献方式)
 
 [English](./README.md) | **中文版**
@@ -76,6 +77,11 @@ $$
 - **L4 — 受限域递归自改进：** 这类系统不仅可以提出、验证并应用候选修改，还可以重写自身的改进机制，使改进过程具备自指性。该过程支持在限定的领域内持续长期进步。
 - **L5 — 通用递归自改进：** L5 保留了 L4 的自主性、自指性和长期进步能力，同时能够把改进能力迁移到广泛且不断变化的任务领域，而不是局限于固定 benchmark 或受限的运行场景。
 
+## 配套评测基准：VibeTraining-Bench
+
+[**VibeTraining-Bench**](https://github.com/D2I-ai/VibeTraining-Bench)（arXiv:2610.26342）基于本综述提出的[统一框架](#核心框架)。在该框架下，它对**跨组件协同设计**能力进行受控评测：研究智能体能否联合改进智能体系统的**训练数据**、**trainer** 和 **推理 harness**，而非仅孤立地调优单个模块。
+
+相关资源：[论文](https://arxiv.org/abs/2610.26342) · [项目主页](https://d2i-ai.github.io/VibeTraining-Bench/index.html) · [代码](https://github.com/D2I-ai/VibeTraining-Bench)
 
 ## 持续维护的文献索引
 
