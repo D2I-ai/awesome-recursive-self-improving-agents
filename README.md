@@ -8,6 +8,7 @@ Shuaiqi Liu\*, Zhengkai Lin\*, Yuxiang Zhang\*, Yuanyi Ren\*, Yue Wu, Yongbin Li
 [![Paper](https://img.shields.io/badge/Paper-Preprint-blue)](https://www.preprints.org/frontend/manuscript/3c41418aa2e782b90ee5da995565ecac/download_pub)
 [![Project Page](https://img.shields.io/badge/Project%20Page-GitHub.io-purple)](https://self-improving-agent.com/)
 [![Awesome](https://awesome.re/badge.svg)](#living-survey-index)
+[![Benchmark](https://img.shields.io/badge/Benchmark-VibeTraining--Bench-orange)](https://github.com/D2I-ai/VibeTraining-Bench)
 [![Contributions Welcome](https://img.shields.io/badge/Contributions-Welcome-brightgreen)](#contributing)
 
 **English** | [中文版](./README.zh-CN.md)
@@ -74,6 +75,11 @@ The survey distinguishes self-improving systems by autonomy in the improvement l
 - **L4 — Bounded Recursive Self-Improvement:** This type of system can not only propose, validate, and apply candidate modifications, but also rewrite its own improvement mechanism, making the improvement process self-referential. The process supports sustained long-term progress within a bounded domain.
 - **L5 — General Recursive Self-Improvement:** L5 retains the autonomy, self-reference, and long-term progress of L4, while transferring improvement capability across broad and evolving task domains rather than remaining limited to a fixed benchmark or narrow operational setting.
 
+## Companion Benchmark: VibeTraining-Bench
+
+[**VibeTraining-Bench**](https://github.com/D2I-ai/VibeTraining-Bench) (arXiv:2610.26342) builds on the [unified framework](#core-framework) introduced in this survey. Within this framework, it provides a controlled evaluation of **cross-component co-design**: whether a research agent can jointly improve the **training data**, the **trainer**, and the **inference harness** of an agent system, rather than tuning a single module in isolation.
+
+Resources: [Paper](https://arxiv.org/abs/2610.26342) · [Project Page](https://d2i-ai.github.io/VibeTraining-Bench/index.html) · [Code](https://github.com/D2I-ai/VibeTraining-Bench) 
 
 ## Living Survey Index
 
