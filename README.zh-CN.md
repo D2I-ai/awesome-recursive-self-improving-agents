@@ -150,6 +150,7 @@ Harness是智能体的执行层，决定模型能观察什么、能调用哪些�
 | Trace2Policy | [link](https://api.semanticscholar.org/CorpusID:289131919) | 2026 | L3 |
 | Learning to Self-Evolve | [link](https://doi.org/10.48550/arXiv.2603.18620) | 2026 | L3 |
 | SePO | [link](https://api.semanticscholar.org/CorpusID:288939508) | 2026 | L4 |
+| SpecForge | [link](https://arxiv.org/pdf/2610.15708)) | 2026 | L3 |
 
 #### Harness编排层和多Agent拓扑结构的自改进
 
