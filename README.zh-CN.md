@@ -197,6 +197,7 @@ Harness是智能体的执行层，决定模型能观察什么、能调用哪些�
 | HarnessForge | [link](https://api.semanticscholar.org/CorpusID:288861123) | 2026 | L3 |
 | Agentic Harness Engineering | [link](https://doi.org/10.48550/arXiv.2604.25850) | 2026 | L3 |
 | Meta-Harness | [link](https://doi.org/10.48550/arXiv.2603.28052) | 2026 | L3 |
+| PluginRSI | [link](https://doi.org/10.48550/arXiv.2609.32423) | 2026 | L3 |
 | AgentFlow | [link](https://doi.org/10.48550/arXiv.2604.20801) | 2026 | L3 |
 | Adaptive Auto-Harness | [link](https://api.semanticscholar.org/CorpusID:288862343) | 2026 | L3 |
 | Group-Evolving Agents | [link](https://doi.org/10.48550/arXiv.2602.04837) | 2026 | L3 |
