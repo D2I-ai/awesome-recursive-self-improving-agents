@@ -250,6 +250,7 @@ This category of work primarily modifies solution trajectories, self-play data, 
 | EVOLVE | [link](https://arxiv.org/abs/2502.05605) | 2025 | L3 |
 | DNPO | [link](https://arxiv.org/abs/2502.05400) | 2026 | L3 |
 | PLD | [link](https://arxiv.org/abs/2511.00091) | 2025 | L3 |
+| Survival is the Only Reward (NSL) | [link](https://arxiv.org/abs/2601.12310) | 2026 | L3 |
 
 #### Verification & Quality Assurance
 
